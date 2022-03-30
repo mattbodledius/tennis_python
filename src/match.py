@@ -10,13 +10,13 @@ class Match:
     def __str__(self):
         return f"{'-'.join(str(x) for x in self.sets.values())}, {str(self.current_game())}"
 
-    def pointWonBy(self, player):
+    def pointWonBy(self, player: str) -> None:
         winning_point = self.current_game().pointWonBy(player)
         if(winning_point):
             self.sets[player] += 1
             self.games.append(Game(*self.sets.keys()))
 
-    def current_game(self): return self.games[self.games.count(
+    def current_game(self) -> Game: return self.games[self.games.count(
         self.games) - 1]
 
-    def score(self): return str(self)
+    def score(self) -> str: return str(self)

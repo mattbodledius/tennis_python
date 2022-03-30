@@ -17,7 +17,7 @@ class Game:
 
         return f'Advantage Player {self.player_with_highest_score()}'
 
-    def player_with_highest_score(self):
+    def num_of_player_with_highest_score(self) -> int:
         highest = max(self.score, key=self.score.get)
 
         return list(self.score.keys()).index(highest) + 1
