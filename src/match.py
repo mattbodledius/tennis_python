@@ -19,6 +19,7 @@ class Match:
     def current_game(self) -> Game: return self.games[self.games.count(
         self.games) - 1]
 
+    # TODO: Move repeated code to separate winning logic func
     def has_current_player_won(self, player: str) -> bool:
         current_sets = self.sets
 
