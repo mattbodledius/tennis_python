@@ -5,10 +5,11 @@ def test_game():
     game = Game('Joe', 'Jimmy')
     assert str(game) == '0-0'
 
-    result = game.point_scored('Joe')
+    result = game.pointWonBy('Joe')
     assert result is None
-    assert str(game) == '1-0'
+    assert str(game) == '15-0'
 
-    game.point_scored('Jimmy')
+    game.pointWonBy('Jimmy')
+    game.pointWonBy('Jimmy')
     assert result is None
-    assert str(game) == '1-1'
+    assert str(game) == '15-30'
