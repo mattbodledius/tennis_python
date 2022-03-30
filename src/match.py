@@ -19,4 +19,14 @@ class Match:
     def current_game(self) -> Game: return self.games[self.games.count(
         self.games) - 1]
 
+    def has_current_player_won(self, player: str) -> bool:
+        current_sets = self.sets
+
+        current_players_score = current_sets.get(player)
+
+        for other_player in current_sets:
+            other_players_score = current_sets.get(other_player)
+
+        return current_players_score >= 6 and current_players_score > other_players_score + 1
+
     def score(self) -> str: return str(self)

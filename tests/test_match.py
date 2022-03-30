@@ -13,20 +13,16 @@ def test_match():
     new_set.pointWonBy('Joe')
     new_set.pointWonBy('Joe')
     new_set.pointWonBy('Joe')
-    new_set.pointWonBy('Joe')
-    new_set.pointWonBy('Joe')
     assert new_set.score() == '1-0, 0-0'
 
     close_set = Match('Joe', 'Jimmy')
     close_set.pointWonBy('Joe')
     close_set.pointWonBy('Joe')
     close_set.pointWonBy('Joe')
+    close_set.pointWonBy('Jimmy')
+    close_set.pointWonBy('Jimmy')
+    close_set.pointWonBy('Jimmy')
     close_set.pointWonBy('Joe')
-    close_set.pointWonBy('Joe')
-    close_set.pointWonBy('Jimmy')
-    close_set.pointWonBy('Jimmy')
-    close_set.pointWonBy('Jimmy')
-    close_set.pointWonBy('Jimmy')
     assert close_set.score() == '0-0, Advantage Player 1'
 
     close_set.pointWonBy('Jimmy')

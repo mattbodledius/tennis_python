@@ -13,3 +13,8 @@ def test_game():
     game.pointWonBy('Jimmy')
     assert result is None
     assert str(game) == '15-30'
+
+    game.pointWonBy('Joe')
+    game.pointWonBy('Joe')
+    assert result is None
+    assert str(game) == '40-30'
