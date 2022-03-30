@@ -9,10 +9,16 @@ class Game:
         self.score = {playerOne: 0, playerTwo: 0}
 
     def __str__(self):
-        if(all(contains(self.score_mapping.keys(), x) for x in self.score.values())):
+        def scoresDisplayable(scores: dict): return all(
+            contains(self.score_mapping.keys(), x) for x in scores.values())
+
+        def scoresEqual(scores: dict): return all(
+            score == list(scores.values())[0] for score in scores.values())
+
+        if(scoresDisplayable(self.score)):
             return "-".join(str(self.score_mapping[x]) for x in self.score.values())
 
-        if(all(score == list(self.score.values())[0] for score in self.score.values())):
+        if(scoresEqual(self.score)):
             return 'Deuce'
 
         return f'Advantage Player {self.num_of_player_with_highest_score()}'
